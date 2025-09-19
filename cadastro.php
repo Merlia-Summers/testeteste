@@ -1,3 +1,16 @@
+<?php
+    if(isset($_POST['submit'])) {
+      
+        print_r($_POST['nome']);
+        print_r($_POST['email']);
+        print_r($_POST['cpf']);
+        print_r($_POST['data_nascimento']);
+        print_r($_POST['cidade']);
+        print_r($_POST['estado']);
+        print_r($_POST('endereco'));
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,7 +21,6 @@
     * {
         box-sizing: border-box;
     }
-
     body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
@@ -18,8 +30,6 @@
         display: flex;
         flex-direction: column;
     }
-
-    /* --- HEADER --- */
     header {
        
         top: 0;
@@ -176,7 +186,7 @@
 
 <div class="container">
     <div class="box">
-        <form action="#">
+        <form action="cadastro.php" method="POST">
             <fieldset>
                <legend>Cadastro</legend>
                 
@@ -220,6 +230,30 @@
                     <input type="text" name="cidade" id="cidade" class="inputUser" required>
                     <label for="cidade" class="labelInput">Cidade</label>
                 </div>
+
+                <div class="inputBox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado" class="labelInput">Estado</label>
+                </div>
+
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="endereco" class="labelInput">Endereço</label>
+                </div>
+
+                <input type="submit" name="submit" id="submit" value="Cadastrar">
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<footer>
+    &copy; Recife Doces e Caramelos 2025
+</footer>
+
+</body>
+</html>
+
 
                 <div class="inputBox">
                     <input type="text" name="estado" id="estado" class="inputUser" required>
